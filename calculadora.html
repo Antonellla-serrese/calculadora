@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+body{
+    background-color: rgb(161, 125, 180);
+}
+
+#titulo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(74, 42, 90);
+    font-size: xx-large;
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+input{
+    font-size: xx-large;
+    border-radius: 15px;
+    margin-left: 37%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(209, 187, 220);
+    width: 60;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.operaciones{
+width: 30%;
+margin-bottom: 1%;
+margin-left: 33%;
+height: 2%;
+font-size: xx-large;
+border-radius: 15px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: rgb(74, 42, 90);
+cursor: pointer;
+}
+
+#suma{
+    margin-top: 1%;
+
+}
+
+#igual{
+width: 30%;
+margin-bottom: 1%;
+margin-left: 33%;
+height: 2%;
+font-size: xx-large;
+border-radius: 15px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: rgb(74, 42, 90);
+cursor: pointer;
+}
+
+
+
+</style>
+
+<body>
+    <h1 id="titulo">Ingresa un numero y luego presiona la operacion que desees realizar</h1>
+    <input id="entrada" type="number" class="numeros" placeholder="Ingresa un numero" name="datos">
+
+    <div class="botonera">
+
+        <button class="operaciones" id="suma" type="reset">+</button>
+        <button class="operaciones" id="resta">-</button>
+        <button class="operaciones" id="multiplicar">x</button>
+        <button class="operaciones" id="dividir">/</button>
+    </div>
+
+    <button id="igual">=</button>
+
+
+    <script>
+
+//defino las variables para utilizar los botones y la informacion
+var entrada = document.getElementById("entrada");
+var operaciones = document.getElementsByClassName("operaciones");
+var igual = document.getElementById("igual");
+//entrada.value = "" ; // modifica lo que se ve en el input ENTRADA es el nombre de la variable que tiene el elemento
+
+//suma
+operaciones[0].onclick = function(){
+    var suma = parseInt ( document.getElementById("entrada").value);
+    entrada.value = "" ;//para que el valor del input quede vacio
+    console.log(suma);
+
+igual.onclick = function(){
+    var resultado = parseInt (document.getElementById("entrada").value);// para que me las sume y no las concatene hayq ue usar parseint
+    entrada.value = suma + resultado;  
+}
+}
+
+//resta
+operaciones[1].onclick = function(){
+    var resta = parseInt ( document.getElementById("entrada").value);
+    entrada.value = "" ;
+console.log(resta);
+
+igual.onclick = function(){
+    var resultado = parseInt (document.getElementById("entrada").value);
+    entrada.value = resta - resultado;  
+}
+}
+
+// multiplica
+operaciones[2].onclick = function(){
+    var multiplica = parseInt ( document.getElementById("entrada").value);
+    entrada.value = "" ;
+    console.log(multiplica);
+
+igual.onclick = function(){
+    var resultado = parseInt (document.getElementById("entrada").value);
+    entrada.value = resultado * multiplica;  
+}
+}
+
+//divide
+operaciones[3].onclick = function(){
+    var divide = parseInt ( document.getElementById("entrada").value);
+    entrada.value = "" ;
+console.log(divide);
+
+igual.onclick = function(){
+    var resultado = parseInt (document.getElementById("entrada").value);
+    entrada.value = divide/resultado;  
+}
+}
+
+
+
+
+
+    </script>
+
+</body>
+</html>
